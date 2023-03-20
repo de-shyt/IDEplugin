@@ -1,0 +1,39 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+  <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+  <id>com.example.demo</id>
+
+  <!-- Public plugin name should be written in Title Case.
+       Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+  <name>Demo</name>
+
+  <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+  <vendor email="de.shut@inbox.ru" url="https://www.jetbrains.com/">JetBrains</vendor>
+
+  <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+       Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+       Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+  <description>
+    When a user clicks on this button, it should open a modal window with a choice of two buttons.
+    Each of these buttons should open a URL of your choice in the internal browser (web view)
+  </description>
+
+  <!-- Product and plugin compatibility requirements.
+       Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <!-- Extension points defined by the plugin.
+       Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+  <extensions defaultExtensionNs="com.intellij">
+  </extensions>
+
+  <actions>
+    <group id="ButtonAction" text="Button Action">
+      <action id="com.example.demo.ButtonAction" class="com.example.demo.ButtonAction"
+        text="Button Action" description="Opens a modal window with a choice of two buttons">
+      </action>
+      <add-to-group group-id="Internal.UI.Demos"/>
+    </group>
+  </actions>
+
+</idea-plugin>
